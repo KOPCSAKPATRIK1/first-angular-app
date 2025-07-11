@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+.magenta-toolbar-dark {
+  @include mat.toolbar-overrides((
+    container-background-color: #7F00FF,  // Dark magenta
+    container-text-color: white,
+  ));
+
+
+ margin-bottom: 1rem;
+}
+
+.center-content {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+ }
