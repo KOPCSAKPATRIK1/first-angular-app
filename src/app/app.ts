@@ -13,4 +13,8 @@ export class App {
   protected title = 'first-angular-app';
 
   users = DUMMY_USERS
+
+  onSelectUser(id: string){
+    console.log('Selected user with id ' + id)
+  }
 }
