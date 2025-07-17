@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './tasks.html',
   styleUrl: './tasks.scss'
 })
-export class Tasks {
+export class TasksComponent {
   @Input() name?: string// | undefined;
 } 
