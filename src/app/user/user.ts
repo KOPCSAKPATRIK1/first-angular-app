@@ -41,6 +41,7 @@ export class UserComponent {
   */
 
   @Input({ required: true }) user!: User;
+  selected = input.required<boolean>()
   @Output() select = new EventEmitter<string>();
   //select = output<string>();
 
