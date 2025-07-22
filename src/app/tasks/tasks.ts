@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
 import { TaskComponent } from './task/task';
 import { Title } from '@angular/platform-browser';
+import { AddTaskComponent } from "./add-task/add-task";
 
 @Component({
   selector: 'app-tasks',
-  imports: [TaskComponent],
+  imports: [TaskComponent, AddTaskComponent],
   templateUrl: './tasks.html',
   styleUrl: './tasks.scss',
 })
 export class TasksComponent {
   @Input({ required: true }) userId!: string;
   @Input({ required: true }) name?: string; // | undefined;
+  isAddingTask = false;
 
   tasks = [
     {
@@ -40,5 +42,13 @@ export class TasksComponent {
   
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
+  }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id)
+  }
+
+  onStartAddTask() {
+    this.isAddingTask = true;
   }
 }

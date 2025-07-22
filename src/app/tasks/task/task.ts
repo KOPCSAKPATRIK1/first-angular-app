@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { Task } from './task.model';
 
 
@@ -10,5 +10,10 @@ import { Task } from './task.model';
   styleUrl: './task.scss'
 })
 export class TaskComponent {
- @Input({required: true}) task!: Task
+ @Input({required: true}) task!: Task;
+ complete = output<string>();
+
+ onCompleteTask() {
+  this.complete.emit(this.task.id);
+ }
 }
