@@ -7,7 +7,9 @@ import { Component, output } from '@angular/core';
   styleUrl: './add-task.scss'
 })
 export class AddTaskComponent {
-  isVisible = output<string>();
-
+  cancel = output<void>()
   
+  onCancel() {
+    this.cancel.emit()
+  }
 }
