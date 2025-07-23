@@ -11,8 +11,7 @@ import { TasksService } from '../tasks.service';
 })
 export class AddTaskComponent {
   userId = input.required<string>()
-  cancel = output<void>();
-  add = output<NewTaskData>()
+  close = output<void>();
   enteredTitle = '';
   enteredSummary = '';
   enteredDueDate = '';
@@ -20,7 +19,7 @@ export class AddTaskComponent {
 
 
   onCancel() {
-    this.cancel.emit();
+    this.close.emit();
   }
 
   onSubmit() {
@@ -29,5 +28,7 @@ export class AddTaskComponent {
       summary: this.enteredSummary,
       date: this.enteredDueDate
     }, this.userId())
+      this.close.emit()
   }
+
 }
