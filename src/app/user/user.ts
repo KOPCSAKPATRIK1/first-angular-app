@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 
 import { User } from './user.model';
+import { CardComponent } from "../shared/card/card";
 /*
 type User = {
     id: string;
@@ -21,7 +22,7 @@ type User = {
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [CardComponent],
   templateUrl: './user.html',
   styleUrl: './user.scss',
   standalone: true,
